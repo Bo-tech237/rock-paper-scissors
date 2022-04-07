@@ -1,15 +1,24 @@
 // computer player
  const wordSelection = ["ROCK", "PAPER", "SCISSORS"];
 
- function selection() {
+ function randomWordSelect() {
+     
     for (let i = 0; i < wordSelection.length; i++) {
         result = Math.floor(Math.random()*3);
     }
         return result;
  }
- let computerPlayer = choice => wordSelection[choice].toUpperCase();
 
- console.log(computerPlayer(selection()));
+ function computerPlay() {
+        return wordSelection[randomWordSelect()].toUpperCase();
+ }
 
- 
- 
+
+ // Anonymous player
+
+ function player1() {
+     choice = prompt("Enter either ROCK, PAPER or SCISSORS: ");
+     return choice.toUpperCase();
+ }
+
+ console.log(player1());
