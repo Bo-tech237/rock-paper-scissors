@@ -56,6 +56,7 @@
  // Play Game
 
  function game() {
+     alert("Welcome to Rock Paper Scissors Game. Rock wins on Scissors, Paper wins on Rock and Scissors wins on Paper. GOOD LUCK!");
      let countWin = 0;
      let countLose = 0;
      let countDraw = 0;
@@ -83,6 +84,8 @@
          alert("DRAW GAME");
          console.log("DRAW GAME");
      }
+
+     alert("Reload the page to PLAY AGAIN!");
  }
  
  game();
