@@ -1,7 +1,7 @@
 // computer player
  const wordSelection = ["ROCK", "PAPER", "SCISSORS"];
 
- function randomWordSelect() {
+ function getRandomWord() {
 
     for (let i = 0; i < wordSelection.length; i++) {
         result = Math.floor(Math.random()*3);
@@ -11,8 +11,8 @@
  }
 
  function computerPlay() {
-        console.log(wordSelection[randomWordSelect()].toUpperCase());
-        return wordSelection[randomWordSelect()].toUpperCase();
+        console.log(wordSelection[getRandomWord()].toUpperCase());
+        return wordSelection[getRandomWord()].toUpperCase();
  }
 
 
