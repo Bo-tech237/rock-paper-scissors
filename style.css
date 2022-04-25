@@ -1,0 +1,69 @@
+body {
+    padding: 0px;
+    margin: 0;
+    background-image: url(img/rps-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+.container {
+    margin-top: 5%;
+    width: 700px;
+    margin-left: 25%;
+}
+
+.clicked-images {
+    display: flex;
+    justify-content: space-evenly;
+    flex: 1;
+}
+
+.click {
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;
+    transition: all 0.007 ease;
+}
+
+.current-result {
+    margin: 10% 0;
+}
+
+.rps-images {
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    color: white;
+}
+
+.image {
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    transition: all 0.007 ease;
+    background-size: cover;
+    background-position: center;
+}
+
+#rock-image {
+    background-image: url(img/rock.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#paper-image {
+    background-image: url(img/paper.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#scissors-image {
+    background-image: url(img/scissors.jpeg);
+    background-size: cover;
+    background-position: center;
+}
