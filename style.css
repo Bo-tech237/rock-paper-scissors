@@ -11,7 +11,7 @@ h1 {
 }
 
 .container {
-    margin-top: 5%;
+    margin-top: 4%;
     width: 700px;
     margin-left: 25%;
 }
@@ -29,15 +29,18 @@ h1 {
     transition: all 0.007 ease;
 }
 
-.current-result {
-    margin: 10% 0;
+.current-score {
+    margin: 5% 0;
+    color: white;
+    text-align: center;
+    font-size: xx-large;
 }
 
 .rps-images {
     display: flex;
     justify-content: space-around;
     flex: 1;
-    color: white;
+    color: rgb(255, 18, 1);
 }
 
 .image {
@@ -50,19 +53,19 @@ h1 {
     background-position: center;
 }
 
-#rock-image {
+#ROCK {
     background-image: url(img/rock.jpg);
     background-size: cover;
     background-position: center;
 }
 
-#paper-image {
+#PAPER {
     background-image: url(img/paper.jpg);
     background-size: cover;
     background-position: center;
 }
 
-#scissors-image {
+#SCISSORS {
     background-image: url(img/scissors.jpeg);
     background-size: cover;
     background-position: center;
