@@ -1,91 +1,53 @@
-// computer player
- const wordSelection = ["ROCK", "PAPER", "SCISSORS"];
+const imageselections = document.querySelectorAll('.image');
+const computerDisplay = document.querySelector('.computer');
+const playerDisplay = document.querySelector('.player');
+let currentScore = document.querySelector('.current-score');
+let checkScoreP = 0;
+let checkScoreC = 0;
 
- function getRandomWord() {
+function getComputerChoice() {
+                index = Math.floor(Math.random()*3);
+        if (index === 0) {
+                computerDisplay.setAttribute('id', 'ROCK');
+                return computerDisplay.getAttribute('id');
+        } else if (index === 1) {
+                computerDisplay.setAttribute('id', 'PAPER');
+                return computerDisplay.getAttribute('id');
+        } else if (index === 2) {
+                computerDisplay.setAttribute('id', 'SCISSORS');
+                return computerDisplay.getAttribute('id');
+        }
+}
 
-    for (let i = 0; i < wordSelection.length; i++) {
-        result = Math.floor(Math.random()*3);
-    }
-        console.log(result);
-        return result;
- }
-
- function computerPlay() {
-        console.log(wordSelection[getRandomWord()].toUpperCase());
-        return wordSelection[getRandomWord()].toUpperCase();
- }
-
-
- // Anonymous player
-
- function player1() {
-     choice = prompt("Enter either ROCK, PAPER or SCISSORS: ");
-     console.log(choice.toUpperCase());
-     return choice.toUpperCase();
- }
-
- // Play Round
-
- function playRound(playerSelection, computerSelection) {
-
-    if (playerSelection === "ROCK" && computerSelection === "SCISSORS") {
-        checkResults = "win";
-        return "You win! " + playerSelection + " beats " + computerSelection;  
-    } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
-        checkResults = "win";
-        return "You win! " + playerSelection + " beats " + computerSelection;
-    } else if (playerSelection === "SCISSORS" && computerSelection == "PAPER") {
-        checkResults = "win";
-        return "You win! " + playerSelection + " beats " + computerSelection;
-    } else if (playerSelection === "ROCK" && computerSelection === "PAPER") {
-        checkResults = "lose";
-        return "You lose! " + computerSelection + " beats " + playerSelection;
-    } else if (playerSelection === "PAPER" && computerSelection === "SCISSORS") {
-        checkResults = "lose";
-        return "You lose! " + computerSelection + " beats " + playerSelection;
-    } else if (playerSelection === "SCISSORS" && computerSelection === "ROCK") {
-        checkResults = "lose";
-        return "You lose! " + computerSelection + " beats " + playerSelection;
-    } else {
-        checkResults = "draw";
-        return "Draw game! " + playerSelection + " equals " + computerSelection;
-    }
- }
+function showCurrentScore(playerScore, computerScore) {
 
 
- // Play Game
+        if (playerScore === "ROCK" && computerScore === "SCISSORS" || playerScore === "PAPER" && computerScore === "ROCK" || playerScore === "SCISSORS" && computerScore == "PAPER") {
+                checkScoreP += 1;
+                console.log(checkScoreP);  
+        } else if (playerScore === "ROCK" && computerScore === "PAPER" || playerScore === "PAPER" && computerScore === "SCISSORS" || playerScore === "SCISSORS" && computerScore === "ROCK") {
+                checkScoreC += 1;
+                console.log(checkScoreC);
+        } 
+    
+        currentScore.textContent = `YOUR SCORE: ${checkScoreP} VS COMPUTER SCORE: ${checkScoreC}`;
+               
+}
 
- function game() {
-     alert("Welcome to Rock Paper Scissors Game. Rock wins on Scissors, Paper wins on Rock and Scissors wins on Paper. GOOD LUCK!");
-     let countWin = 0;
-     let countLose = 0;
-     let countDraw = 0;
-     for (let i = 1; i <= 5; i++) {
-         alert(playRound(player1(), computerPlay()));
-         if (checkResults === "win") {
-             countWin = countWin + i;
-         } else if (checkResults === "lose") {
-             countLose = countLose + i;
-         } else {
-             countDraw = countDraw + i;
-         }
-     }
-     console.log("wins: " + countWin);
-     console.log("loses: " + countLose);
-     console.log("draws: " + countDraw);
 
-     if (countWin > countLose) {
-         alert("You are the CHAMPION!");
-         console.log("You are a CHAMPION!");
-     } else if (countWin < countLose) {
-         alert("sorry you are DISQUALIFIED!");
-         console.log("sorry you are DISQUALIFIED!");
-     } else {
-         alert("DRAW GAME");
-         console.log("DRAW GAME");
-     }
+function getPlayerChoice(e) {
+        playerDisplay.setAttribute('id', e.target['id']);
+        return playerDisplay.getAttribute('id');
+        
+}
 
-     alert("Reload the page to PLAY AGAIN!");
- }
- 
- game();
+function playRound(e) {
+        if (!e.target['id']) return;
+        getComputerChoice();
+        getPlayerChoice(e);
+        showCurrentScore(getPlayerChoice(e), getComputerChoice());
+}
+
+imageselections.forEach(imageselection => {
+        imageselection.addEventListener('click', playRound);
+});
