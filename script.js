@@ -2,6 +2,8 @@ const imageselections = document.querySelectorAll('.image');
 const computerDisplay = document.querySelector('.computer');
 const playerDisplay = document.querySelector('.player');
 let currentScore = document.querySelector('.current-score');
+const finalResult = document.querySelector('.final-result');
+let button = document.querySelector('.btn');
 let checkScoreP = 0;
 let checkScoreC = 0;
 
@@ -46,8 +48,24 @@ function playRound(e) {
         getComputerChoice();
         getPlayerChoice(e);
         showCurrentScore(getPlayerChoice(e), getComputerChoice());
+        showFinalResult();
 }
 
 imageselections.forEach(imageselection => {
         imageselection.addEventListener('click', playRound);
 });
+
+
+function showFinalResult() {
+        if (checkScoreP === 5) {
+                finalResult.textContent = 'CONGRATULATION YOU WIN!';
+                imageselections.forEach(imageselection => {
+                        imageselection.removeEventListener('click', playRound);
+                });
+        } else if (checkScoreC === 5) {
+                finalResult.textContent = 'SORRY YOU LOSE!';
+                imageselections.forEach(imageselection => {
+                        imageselection.removeEventListener('click', playRound);
+                });
+        }
+}
