@@ -40,7 +40,6 @@ h1 {
     display: flex;
     justify-content: space-around;
     flex: 1;
-    color: rgb(255, 18, 1);
 }
 
 .image {
@@ -69,4 +68,19 @@ h1 {
     background-image: url(img/scissors.jpeg);
     background-size: cover;
     background-position: center;
+}
+
+.final-result {
+    color: #fff;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.btn {
+    color: #fff;
+    background-color: blue;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bolder;
+    border-radius: 8px;
 }
