@@ -1,13 +1,14 @@
 body {
     padding: 0px;
     margin: 0;
-    background-image: url(img/rps-bg.jpg);
+    background-color: black;
     background-size: cover;
     background-position: center;
 }
 
 h1 {
     text-align: center;
+    color: #fff;
 }
 
 .container {
@@ -23,7 +24,7 @@ h1 {
 }
 
 .click {
-    border: 2px solid black;
+    border: 2px solid white;
     height: 200px;
     width: 200px;
     transition: all 0.007 ease;
@@ -43,7 +44,7 @@ h1 {
 }
 
 .image {
-    border: 2px solid black;
+    border: 2px solid white;
     height: 200px;
     width: 200px;
     text-align: center;
