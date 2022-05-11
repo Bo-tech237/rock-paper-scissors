@@ -49,6 +49,7 @@ function playRound(e) {
         getPlayerChoice(e);
         showCurrentScore(getPlayerChoice(e), getComputerChoice());
         showFinalResult();
+        replayGame();
 }
 
 imageselections.forEach(imageselection => {
@@ -67,5 +68,13 @@ function showFinalResult() {
                 imageselections.forEach(imageselection => {
                         imageselection.removeEventListener('click', playRound);
                 });
+        }         
+}
+
+function replayGame() {
+
+        if (checkScoreP === 5 || checkScoreC === 5) {
+                button.setAttribute('class', 'display');
         }
 }
+
