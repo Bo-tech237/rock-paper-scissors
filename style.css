@@ -83,4 +83,19 @@ h1 {
     font-size: 16px;
     font-weight: bolder;
     border-radius: 8px;
+    margin: 5px;
+    margin-left: 41%;
+    display: none;
+}
+
+.display {
+    color: #fff;
+    background-color: blue;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bolder;
+    border-radius: 8px;
+    margin: 5px;
+    margin-left: 41%;
+    display: '';
 }
